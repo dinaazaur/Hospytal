@@ -5,6 +5,22 @@ $bg-color: white;
 $primary: #16395b;
 $font-demi: "AvenirNextCyr-Demi", sans-serif;
 
+%doctor-reviews{
+  color: #707070;
+  font-size: 13px;
+}
+%doctor-reviews_icons{
+  padding: 4px 18px;
+  border-radius: 9999px;
+  background-color: #e4edfe;
+  position: relative;
+}
+%doctor-reviews_icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -124,7 +140,7 @@ strong{
     .messages{
       display: block;
       position: relative;
-      padding-left: 20px;
+      
       .messages_span{
         position: absolute;
         top: -30%;
@@ -172,7 +188,12 @@ strong{
     display: block;
   }
 }
+@media(min-width: 360px){
+  .nav .messages{
 
+    padding-left: 20px;
+  }
+}
 @media (min-width: 576px) {
   .nav {
     max-width: 710px;
@@ -247,6 +268,7 @@ strong{
 
 
 
+
 // header
 
 
@@ -254,6 +276,7 @@ strong{
   padding: 0;
   position: relative;
   height: 200px;
+  transition: height 0.5s ease;
   .header-up{
     border-radius: 6px;
     background: url('../images/header/bg.jpg') center no-repeat;
@@ -290,7 +313,9 @@ strong{
     right: 7%;
     bottom: -8%;
     background-color: $bg-color;
+    transition: all .5s ease;
     border-radius: 99999px;
+    z-index: 6;
     width: 30px;
     height: 30px;
     &:focus{
@@ -300,6 +325,10 @@ strong{
       transition: .3s transform ease-in-out,
       color 0.3s;
     }
+  }
+  .collapsed{
+    bottom: 0%;
+    border: 1px solid rgba(0, 0, 0, 0.164);
   }
   .collapsed .fa {
     transform: rotate(180deg);
@@ -313,6 +342,8 @@ strong{
     height: 0;
     transition: height .5s;
     overflow: hidden;
+    display: block;
+    z-index: 5;
     ul{
       padding-bottom: 12px;
     }
@@ -334,11 +365,15 @@ strong{
     background: white;
   }  
 }
-
-
+.header-active{
+  height: 537px;
+}
+.header .header-up .header_logo_fix{
+  top: -7%;
+}
 @media (min-width: 355px){
   .header .header-table{
-    width: 355px;
+    width: 90%;
   }
 }
 
@@ -365,6 +400,9 @@ strong{
         border: 1px solid rgba(0,0,0,0.3);
         box-shadow: 0 0px 10px rgba(0,0,0,0.3);
         border-radius: 9999px;
+      }
+      .header_logo_fix{
+        top: -15%;
       }
       .header_name{
         h1{
@@ -396,10 +434,9 @@ strong{
     }
     .collabse-btn_small{
       display: block;
-      transition: all .5s ease;
       right: 11%;
       top: 51.3%;
-      z-index: 1;
+      z-index: 6;
       .fa{
         transform: rotate(180deg);
       }
@@ -452,6 +489,9 @@ strong{
         left: 5%;
         border-radius: 9999px;
       }
+      .header_logo_fix{
+        top: 84%;
+      }
       .header_name{
         h1{
           font-size: 23px;
@@ -473,59 +513,257 @@ strong{
   }
 }
 
+//header down
+
 
 .header-down{
-  margin: 0;
-  .header-reviews{
+.header-reviews{
+  font-family: $font-demi;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  p{
+    padding-top: 5px;
+  }
+}
+.header-btns{
+  justify-content: center;
+  margin: 10px auto;
+  .header-down_btn{
     font-family: $font-demi;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 13px;
-    p{
-      padding-top: 5px;
+    background: $bg-color;
+    padding: 8px 14px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border: 1px solid #c6d7ef;
+    border-radius: 20px;
+    transition: all 0.8s;
+    &:active,
+    &:focus{
+      outline: none;
+      background-color: #07d9b4;
+      border: 1px solid #07d9b4;
+      
     }
+    
+  }
+  .status-btn{
+    flex-grow: 0.3;
+  }
+  .status-btn_inactive{
+    display: none;
+  }
+  .about-btn{
+    flex-grow: 0.5;
+  }
+  
+  .active-about{
+    flex-grow: 0.7;
+  }
+  .location-btn{
+    position: relative;
+    padding: 10px 18px;
+    img{
+      position: absolute;
+      transform: translate(-50%,-50%);
+      background-color: #07d9b4;
+    }
+  }
+  .header_location-large{
+    display: none;
+  }
   }
 }
 
+
+.gallery-wrap{
+  overflow: hidden;
+  margin-bottom: 20px;
+  .gallery{
+    transition: height 0.5s;
+    height: 0;
+    width: 3000px;
+    img{
+      height: 100%;
+      border-radius: 6px;
+    }
+    .gallery-main-elem{
+      filter: brightness(50%);
+    }
+    a{
+      height: 100%;
+      display: inline-block;
+    }
+    .hendler{
+      position: relative;
+      padding: 0;
+      .images_amount{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: $bg-color;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .gallery-active{
+    height: 30vh;
+  }
+  
+}
 
 @media (min-width: 768px){
   .header-down{
     margin-top: 15px;
   }
 }
-/* 
 
-}
-
-.header_name{
+@media(min-width: 992px){
+  .header-down .header-btns .header_location-large{
+    display: block;
+  }
+  .header-down .header-btns .header_location-small{
+    display: none;
+  }
   
-}
-.header-table{
-  position: absolute; 
-  position: absolute;
-  right: 54px;
-  height: 196px;
-  bottom: 0;
-  background: white;
-  text-align: initial;
-  padding: 15px 30px;
-  .schedule{
-    justify-content: baseline;
-    padding: 10px 0;
+  .header-down{
+    align-items: baseline;
+
+  }
+  .revews-business{
+   display: none;
+  }
+  .reviews{
+  padding: 0;
+  }
+  .header-down .header-reviews{
+  padding-left: 100px;
+  }
+  .header-reviews{
+    justify-content: flex-end;
   }
 }
-.collabse-btn_small{
-  display: block;
-  transition: all .5s ease;
-  right: 11%;
-  top: 46%;
-  z-index: 1;
+
+@media(min-width: 1200px){
+  .header-down .header-btns{
+    margin: 0;
+  }
+  
+  
+  .reviews-pl{
+     max-width: 50%;
+  }
+  
+ }
+
+
+// doctors list
+
+.doctors-list{
+  margin-bottom: 100px;
+  .doctors_heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    h2{
+      font-family: $font-demi;
+      font-size: 24px;
+    }
+    p{
+      font-family: $font-demi;
+      color: #00d7a9;
+      text-transform: uppercase;
+    }
+  }
+
+
+  .item{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $bg-color;
+    border: 1px solid #d2e1f5;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    position: relative;
+    .doctor_like{
+      position: absolute;
+      top: 8%;
+      left: 5%;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 9999px;
+    }
+    .doctor_info{
+      flex-basis: 70%;
+      text-align: right;
+      padding-right: 10px;
+      h5{
+        font-size: 15px;
+        font-family: $font-demi;
+      }
+      p{
+        font-size: 12px;
+        color: #0943bf;
+      }
+    }
+    .doctor-photo{
+      height: 80px;
+      flex-basis: 30%;
+      .doctor-status{
+        font-size: 14px;
+      }
+    }
+    .doctor_reviews{
+      margin-top: 33px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .doctor_reviews_bestDesign{
+        width: 33%;
+        display: flex;
+        .doctor_reviews-niceDesign{
+          display: flex;
+          text-align: right;
+          flex-direction: column;
+          p{
+            display: inline-block;
+            max-width: 100%;
+            color: #0943bf;
+            font-size: 16px;
+          }
+          .doctor_reviews-sub{
+            @extend %doctor-reviews;
+          }
+        }
+        .droctor_reviews-img{
+          @extend %doctor-reviews_icons;
+          img{
+            @extend %doctor-reviews_icon;
+          }
+        }
+      }
+    }
+    .doctor_reviews-location{
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      .doctor_reviews-location_info{
+        text-align: right;
+        p{
+        font-size: 13px;  
+        }
+        .doctor_reviews-sub{
+          @extend %doctor-reviews;
+        }
+      }
+      .doctor_reviews-location_icon{
+        @extend %doctor-reviews_icons;
+        padding: 19px;
+          img{
+            @extend %doctor-reviews_icon;
+          }
+      }
+    }
+  }
 }
-.collapsed{
-  top: 16%;
-  transform: rotate(-360deg); 
-}
-.header-table_active{
-  height: 312px;
-}
-*/

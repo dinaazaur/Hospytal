@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="style/bootstrap.css">
   <link rel="stylesheet" href="style/owl.carousel.css">
   <link rel="stylesheet" href="style/owl.theme.default.css">
+  <link rel="stylesheet" href="style/mgpp.css">
   <link rel="stylesheet" href="style/style.css">
   <script src="https://kit.fontawesome.com/67ff1668e9.js"></script>
 </head>
 
 <body>
   <!--  =========     Nav   =========      -->
-  <nav class="nav row">
+
+  <nav class="nav">
     <div class="logo col-lg-2 col-md-1 col-2 order-1">
       <a href="/"><img src="images/nav/logo.png" alt="MoniHeal" class="logoBig"></a>
       <a href="/"><img src="images/nav/logo-play.png" alt="MoniHeal" class="logoLittle"></a>
@@ -71,7 +73,7 @@
 
   <header class="header container">
     <div class="row header-up">
-      <img src="images/header/Logo.jpg" alt="благомед">
+      <img src="images/header/Logo.jpg" alt="благомед" class="header_logo">
       <div class="col-9 offset-0 col-md-9 offset-lg-2 header_name">
         <h1>Медичний, оздоровчий центр «Благомед»</h1>
         <p>Медичний центр</p>
@@ -118,45 +120,142 @@
         </ul>
       </div>
     </div>
+  </header>
+  <section class="container header-down">
     <div class="row header-down">
-      <div class="col-12 col-md-12 header-reviews">
-        <div class="col-6 col-md-3">
+      <div class="col-12 col-lg-6 col-xl-7 header-reviews">
+        <div class="col-6 col-md-4 reviews reviews-pl">
           <p>
             5,0
-            <img src="/images/header/baseline-star_rate-18px.png" alt="stars">
+            <img src="images/header/baseline-star_rate-18px.png" alt="stars">
             (953 Відгуків)
           </p>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-6 col-md-3 reviews ">
           <p>
-            <img src="/images/header/outline-person_outline-24px.jpg" alt="person">
+            <img src="images/header/outline-person_outline-24px.jpg" alt="person">
             120 Лікарів
           </p>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-6 col-md-3 reviews reviews-pl">
           <p>
-            <img src="/images/header/baseline-assignment-24px.jpg" alt="assignment">
+            <img src="images/header/baseline-assignment-24px.jpg" alt="assignment">
             340 Послуг
           </p>
         </div>
-        <div class="col-6 col-md-3">
+        <div class="col-6 reviews revews-business">
           <p>
-            <img src="/images/header/outline-business-24px.jpg" alt="basiness">
+            <img src="images/header/outline-business-24px.jpg" alt="basiness">
             50 Філіалів
           </p>
         </div>
       </div>
-      <div class="col-12 row">
-        <button class="header-down_btn">Я тут працюю</button>
-        <button class="header-down_btn">Про клініку</button>
-        <button class="header-down_btn">Фото</button>
-        <button class="header-down_btn">
-          <img class="header_location" src="images/header/map_small.jpg" alt="location"><span class="sr-only">Локація</span>
+      <div class="col-12 col-lg-6 col-xl-5 row header-btns">
+        <button class="header-down_btn status-btn">Я тут працюю</button>
+        <button class="header-down_btn about-btn">Про клініку</button>
+        <button class="header-down_btn gallery-btn">Фото</button>
+        <button class="header-down_btn location-btn">
+          <img class="header_location header_location-small" src="images/header/map_small.jpg" alt="location">
+          <img class="header_location header_location-large" src="images/header/map_large.jpg" alt="location">
+          <span class="sr-only">Локація</span>
         </button>
       </div>
     </div>
-  </header>
+  </section>
+  <div class="gallery-wrap container">
+    <section class="header-down_galery">
+      <div class="gallery">
+        <a href="https://picsum.photos/1200/1204" class="hendler" title="add some text">
+          <img src="https://picsum.photos/300/302" class="gallery-main-elem" alt="dummyphoto">
+          <span class="images_amount">+50 фото</span>
+        </a>
+        <a href="https://picsum.photos/1200/1200" title="add some text">
+          <img src="https://picsum.photos/300/301" alt="dummyphoto">
+        </a>
+        <a href="https://picsum.photos/1200/1202" title="add some text">
+          <img src="https://picsum.photos/300/303" alt="dummyphoto">
+        </a>
+        <a href="https://picsum.photos/1200/1203" title="add some text">
+          <img src="https://picsum.photos/300/300" alt="dummyphoto">
+        </a>
+        <a href="https://picsum.photos/1200/1203" title="add some text">
+          <img src="https://picsum.photos/300/300" alt="dummyphoto">
+        </a>
+        <a href="https://picsum.photos/1200/1203" title="add some text">
+          <img src="https://picsum.photos/300/300" alt="dummyphoto">
+        </a>
+      </div>
+    </section>
+  </div>
 
+  <section class="doctors-list container">
+    <div class="doctors_heading">
+      <h2>Лікарі <span class="doctors_small">закладу</span></h2>
+      <p>Всі лікарі</p>
+    </div>
+    <div class="row doctor-card">
+      <div class="col">
+        <!-- <div class="owl-carousel owl-one owl-theme"> -->
+        <div class="item">
+          <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor_like"></a>
+          <div class="doctor_info">
+            <h5>Іванов Олексій Вікторович</h5>
+            <p>Інфекціонист, Лікар-нарколог дільничий, Ще якась спеціальність лікаря</p>
+          </div>
+          <div class="doctor-photo">
+            <figure>
+              <img src="images/doctors-list/doctor.jpg" alt="photo">
+              <figcaption><span class="doctor-status">Доступний</span></figcaption>
+            </figure>
+
+          </div>
+          <div class="doctor_reviews">
+            <div class="doctor_reviews_bestDesign">
+              <div class="doctor_reviews-niceDesign">
+                <p>4,9</p>
+                <p class="doctor_reviews-sub">Рейтинг</p>
+              </div>
+              <div class="droctor_reviews-img">
+                <img src="images/doctors-list/start.png" alt="star">
+              </div>
+            </div>
+            <div class="doctor_reviews_bestDesign">
+              <div class="doctor_reviews-niceDesign">
+                <p>4,9</p>
+                <p class="doctor_reviews-sub">Рейтинг</p>
+              </div>
+              <div class="droctor_reviews-img">
+                <img src="images/doctors-list/message.png" alt="message">
+              </div>
+            </div>
+            <div class="doctor_reviews_bestDesign">
+              <div class="doctor_reviews-niceDesign">
+                <p>4,9</p>
+                <p class="doctor_reviews-sub">Рейтинг</p>
+              </div>
+              <div class="droctor_reviews-img">
+                <img src="images/doctors-list/calendar.png" alt="calendar">
+              </div>
+            </div>
+          </div>
+          <div class="doctor_reviews-location">
+            <div class="doctor_reviews-location_info">
+                <p>м. Луцьк, пр. Соборності 89, каб. 412</p>
+                <p class="doctor_reviews-sub">Луцька міська клінічна лікарня</p>
+            </div>
+            <div class="doctor_reviews-location_icon">
+              <img src="images/doctors-list/location.png" alt="location">
+            </div>
+          </div>
+          <div class="doctor_reviws-services">
+            <p>Консультація <span>- від 100 грн</span></p>
+            <p>Сеанс терарії <span>- від 300 грн</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+  </section>
 
   <!--  =========     Header   =========      -->
 
@@ -164,6 +263,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.js"></script>
+  <script src="js/mgpp.js"></script>
   <script src="js/main.js"></script>
 
 </body>

@@ -33,7 +33,6 @@ time, mark, audio, video {
 
 img {
   max-width: 100%;
-  height: auto;
 }
 
 a {
@@ -170,6 +169,26 @@ body {
   font-style: normal;
   font-weight: normal;
   src: local("AvenirNextCyr-HeavyItalic"), url("../fonts/AvenirNextCyr-HeavyItalic.woff") format("woff");
+}
+
+.doctors-list .item .doctor_reviews .doctor_reviews_bestDesign .doctor_reviews-niceDesign .doctor_reviews-sub, .doctors-list .item .doctor_reviews-location .doctor_reviews-location_info .doctor_reviews-sub {
+  color: #707070;
+  font-size: 13px;
+}
+
+.doctors-list .item .doctor_reviews .doctor_reviews_bestDesign .droctor_reviews-img, .doctors-list .item .doctor_reviews-location .doctor_reviews-location_icon {
+  padding: 4px 18px;
+  border-radius: 9999px;
+  background-color: #e4edfe;
+  position: relative;
+}
+
+.doctors-list .item .doctor_reviews .doctor_reviews_bestDesign .droctor_reviews-img img, .doctors-list .item .doctor_reviews-location .doctor_reviews-location_icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .sr-only {
@@ -347,7 +366,6 @@ strong {
   .nav .messages {
     display: block;
     position: relative;
-    padding-left: 20px;
   }
   .nav .messages .messages_span {
     position: absolute;
@@ -386,6 +404,12 @@ strong {
   }
   .logoLittle {
     display: block;
+  }
+}
+
+@media (min-width: 360px) {
+  .nav .messages {
+    padding-left: 20px;
   }
 }
 
@@ -460,6 +484,8 @@ strong {
   padding: 0;
   position: relative;
   height: 200px;
+  -webkit-transition: height 0.5s ease;
+  transition: height 0.5s ease;
 }
 
 .header .header-up {
@@ -504,7 +530,10 @@ strong {
   right: 7%;
   bottom: -8%;
   background-color: white;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
   border-radius: 99999px;
+  z-index: 6;
   width: 30px;
   height: 30px;
 }
@@ -516,6 +545,11 @@ strong {
 .header .collabse-btn .fa {
   -webkit-transition: .3s transform ease-in-out, color 0.3s;
   transition: .3s transform ease-in-out, color 0.3s;
+}
+
+.header .collapsed {
+  bottom: 0%;
+  border: 1px solid rgba(0, 0, 0, 0.164);
 }
 
 .header .collapsed .fa {
@@ -533,6 +567,8 @@ strong {
   -webkit-transition: height .5s;
   transition: height .5s;
   overflow: hidden;
+  display: block;
+  z-index: 5;
 }
 
 .header .header-table ul {
@@ -563,9 +599,17 @@ strong {
   background: white;
 }
 
+.header-active {
+  height: 537px;
+}
+
+.header .header-up .header_logo_fix {
+  top: -7%;
+}
+
 @media (min-width: 355px) {
   .header .header-table {
-    width: 355px;
+    width: 90%;
   }
 }
 
@@ -596,6 +640,9 @@ strong {
             box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
     border-radius: 9999px;
   }
+  .header .header-up .header_logo_fix {
+    top: -15%;
+  }
   .header .header-up .header_name h1 {
     font-size: 20px;
     line-height: 2;
@@ -625,11 +672,9 @@ strong {
   }
   .header .collabse-btn_small {
     display: block;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
     right: 11%;
     top: 51.3%;
-    z-index: 1;
+    z-index: 6;
   }
   .header .collabse-btn_small .fa {
     -webkit-transform: rotate(180deg);
@@ -680,6 +725,9 @@ strong {
     left: 5%;
     border-radius: 9999px;
   }
+  .header .header-up .header_logo_fix {
+    top: 84%;
+  }
   .header .header-up .header_name h1 {
     font-size: 23px;
     line-height: 2;
@@ -697,10 +745,6 @@ strong {
   }
 }
 
-.header-down {
-  margin: 0;
-}
-
 .header-down .header-reviews {
   font-family: "AvenirNextCyr-Demi", sans-serif;
   display: -webkit-box;
@@ -715,46 +759,290 @@ strong {
   padding-top: 5px;
 }
 
+.header-down .header-btns {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px auto;
+}
+
+.header-down .header-btns .header-down_btn {
+  font-family: "AvenirNextCyr-Demi", sans-serif;
+  background: white;
+  padding: 8px 14px;
+  margin-top: 5px;
+  margin-right: 5px;
+  border: 1px solid #c6d7ef;
+  border-radius: 20px;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.header-down .header-btns .header-down_btn:active, .header-down .header-btns .header-down_btn:focus {
+  outline: none;
+  background-color: #07d9b4;
+  border: 1px solid #07d9b4;
+}
+
+.header-down .header-btns .status-btn {
+  -webkit-box-flex: 0.3;
+      -ms-flex-positive: 0.3;
+          flex-grow: 0.3;
+}
+
+.header-down .header-btns .status-btn_inactive {
+  display: none;
+}
+
+.header-down .header-btns .about-btn {
+  -webkit-box-flex: 0.5;
+      -ms-flex-positive: 0.5;
+          flex-grow: 0.5;
+}
+
+.header-down .header-btns .active-about {
+  -webkit-box-flex: 0.7;
+      -ms-flex-positive: 0.7;
+          flex-grow: 0.7;
+}
+
+.header-down .header-btns .location-btn {
+  position: relative;
+  padding: 10px 18px;
+}
+
+.header-down .header-btns .location-btn img {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #07d9b4;
+}
+
+.header-down .header-btns .header_location-large {
+  display: none;
+}
+
+.gallery-wrap {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.gallery-wrap .gallery {
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  height: 0;
+  width: 3000px;
+}
+
+.gallery-wrap .gallery img {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.gallery-wrap .gallery .gallery-main-elem {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.gallery-wrap .gallery a {
+  height: 100%;
+  display: inline-block;
+}
+
+.gallery-wrap .gallery .hendler {
+  position: relative;
+  padding: 0;
+}
+
+.gallery-wrap .gallery .hendler .images_amount {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.gallery-wrap .gallery-active {
+  height: 30vh;
+}
+
 @media (min-width: 768px) {
   .header-down {
     margin-top: 15px;
   }
 }
 
-/* 
-
-}
-
-.header_name{
-  
-}
-.header-table{
-  position: absolute; 
-  position: absolute;
-  right: 54px;
-  height: 196px;
-  bottom: 0;
-  background: white;
-  text-align: initial;
-  padding: 15px 30px;
-  .schedule{
-    justify-content: baseline;
-    padding: 10px 0;
+@media (min-width: 992px) {
+  .header-down .header-btns .header_location-large {
+    display: block;
+  }
+  .header-down .header-btns .header_location-small {
+    display: none;
+  }
+  .header-down {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .revews-business {
+    display: none;
+  }
+  .reviews {
+    padding: 0;
+  }
+  .header-down .header-reviews {
+    padding-left: 100px;
+  }
+  .header-reviews {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
-.collabse-btn_small{
-  display: block;
-  transition: all .5s ease;
-  right: 11%;
-  top: 46%;
-  z-index: 1;
+
+@media (min-width: 1200px) {
+  .header-down .header-btns {
+    margin: 0;
+  }
+  .reviews-pl {
+    max-width: 50%;
+  }
 }
-.collapsed{
-  top: 16%;
-  transform: rotate(-360deg); 
+
+.doctors-list {
+  margin-bottom: 100px;
 }
-.header-table_active{
-  height: 312px;
+
+.doctors-list .doctors_heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
-*/
+
+.doctors-list .doctors_heading h2 {
+  font-family: "AvenirNextCyr-Demi", sans-serif;
+  font-size: 24px;
+}
+
+.doctors-list .doctors_heading p {
+  font-family: "AvenirNextCyr-Demi", sans-serif;
+  color: #00d7a9;
+  text-transform: uppercase;
+}
+
+.doctors-list .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: white;
+  border: 1px solid #d2e1f5;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.doctors-list .item .doctor_like {
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 9999px;
+}
+
+.doctors-list .item .doctor_info {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.doctors-list .item .doctor_info h5 {
+  font-size: 15px;
+  font-family: "AvenirNextCyr-Demi", sans-serif;
+}
+
+.doctors-list .item .doctor_info p {
+  font-size: 12px;
+  color: #0943bf;
+}
+
+.doctors-list .item .doctor-photo {
+  height: 80px;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.doctors-list .item .doctor-photo .doctor-status {
+  font-size: 14px;
+}
+
+.doctors-list .item .doctor_reviews {
+  margin-top: 33px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.doctors-list .item .doctor_reviews .doctor_reviews_bestDesign {
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.doctors-list .item .doctor_reviews .doctor_reviews_bestDesign .doctor_reviews-niceDesign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.doctors-list .item .doctor_reviews .doctor_reviews_bestDesign .doctor_reviews-niceDesign p {
+  display: inline-block;
+  max-width: 100%;
+  color: #0943bf;
+  font-size: 16px;
+}
+
+.doctors-list .item .doctor_reviews-location {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.doctors-list .item .doctor_reviews-location .doctor_reviews-location_info {
+  text-align: right;
+}
+
+.doctors-list .item .doctor_reviews-location .doctor_reviews-location_info p {
+  font-size: 13px;
+}
+
+.doctors-list .item .doctor_reviews-location .doctor_reviews-location_icon {
+  padding: 19px;
+}
 /*# sourceMappingURL=style.css.map */

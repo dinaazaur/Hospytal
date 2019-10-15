@@ -807,6 +807,7 @@ strong {
   display: flex;
   flex-wrap: wrap;
   background-color: white;
+  overflow: hidden;
   border: 1px solid #d2e1f5;
   border-radius: 5px;
   padding: 10px;

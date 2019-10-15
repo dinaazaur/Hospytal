@@ -641,7 +641,7 @@ strong{
   }
   .gallery-wrap .gallery-active {
     height: 70vh;
-}
+  }
 }
 
 @media(min-width: 992px){
@@ -651,7 +651,9 @@ strong{
   .header-down .header-btns .header_location-small{
     display: none;
   }
-  
+  .gallery-wrap .gallery-active {
+    height: 50vh;
+  }
   .header-down{
     align-items: baseline;
 

@@ -755,6 +755,10 @@ strong {
     display: none;
   }
 
+  .gallery-wrap .gallery-active {
+    height: 50vh;
+  }
+
   .header-down {
     align-items: baseline;
   }

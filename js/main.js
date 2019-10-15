@@ -1,38 +1,36 @@
 // language change pop-up
 const item = document.querySelector('.dropdown-menu');
 
-$('.nav-changeLanguage').click(function () {
+$('.nav-changeLanguage').on('click', function () {
 	$('.dropdown-menu').toggleClass("show");
-})
+});
 
 window.onclick = function (event) {
 	if (!event.target.matches('.nav-changeLanguage')) {
 		item.classList.remove('show');
 	}
-}
+};
 
 
 // expand animation 
-$(".collabse-btn").click(function () {
-	$(".header-table").toggleClass("header-table_active").focus;
-	$(".header").toggleClass("header-active").focus;
+$(".collabse-btn").on('click',function () {
+	$(".header-table").toggleClass("header-table_active");
+	$(".header").toggleClass("header-active");
 	$('.header_logo').toggleClass('header_logo_fix');
 	$(this).toggleClass("collapsed");
 });
 
 // gallery 
-$('.gallery-btn').click(function() {
-	$('.gallery').toggleClass('gallery-active').focus;
-	$('.status-btn').toggleClass('status-btn_inactive').focus;
-	$('.about-btn').toggleClass('active-about').focus;
-});
+
 // Gallery show
-
-
-
+$('.gallery-btn').on('click',function () {
+	$('.gallery').toggleClass('gallery-active');
+	$('.status-btn').toggleClass('status-btn_inactive');
+	$('.about-btn').toggleClass('active-about');
+});
 
 // Gallery main
-$(document).ready(function () {
+$(document).on('ready',function () {
 	$('.gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
@@ -52,4 +50,36 @@ $(document).ready(function () {
 	});
 });
 
+// doctor's carousel
+
+
+let owl = $('.doctor-carousel');
+owl.owlCarousel({
+  margin: 0,
+  nav: false,
+  navText: ["<div class='nav-btn prev-slide'><span><i class=\"fas fa-arrow-left\"></i></span></div>", "<div class='nav-btn next-slide'><i class=\"fas fa-arrow-right\"></i></div>"],
+  dots: true,
+  loop: true,
+  responsiveClass: true,
+  responsive: {
+    320: {
+      items: 1,
+      dotsEach: 2,
+    },
+    780: {
+      items: 2,
+      dotsEach: 2,
+    },
+    1024: {
+      items: 3,
+      dotsEach: 2,
+      nav: true,
+    },
+    1300: {
+      items: 4,
+      dotsEach: 2,
+      nav: true,
+    }
+  }
+});
 

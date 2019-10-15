@@ -7,3 +7,34 @@ body {
   background-color: #F6F4FC;
   
 }
+
+// custom container's
+@media (min-width: 576px) {
+  .container {
+    max-width: 710px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 1080px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1460px;
+  }
+}

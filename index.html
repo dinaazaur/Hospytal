@@ -25,8 +25,8 @@
     <form action="/" method="" class="nav-form col-lg-5 col-md-5 col-12 order-md-2 order-3">
       <label for="search_input" class="sr-only">Пошук на сайті</label>
       <div class="nav-form_wrapper">
-        <input type="text" name="search_input" class="input-Large" placeholder="Знайти фахівця">
-        <input type="text" name="search_input" class="input-Small" placeholder="Шукати фахівця, клініку, послугу...">
+        <input type="text" name="search_input" class="input-Large" id="search_input" placeholder="Знайти фахівця">
+        <input type="text" name="search_input" class="input-Small" id="search_input" placeholder="Шукати фахівця, клініку, послугу...">
         <button class="btn-search"><img src="images/nav/search.png" alt="search">
           <span class="sr-only">Пошук</span>
         </button>
@@ -195,68 +195,495 @@
     </div>
     <div class="row doctor-card">
       <div class="col">
-        <!-- <div class="owl-carousel owl-one owl-theme"> -->
-        <div class="item">
-          <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor_like"></a>
-          <div class="doctor_info">
-            <h5>Іванов Олексій Вікторович</h5>
-            <p>Інфекціонист, Лікар-нарколог дільничий, Ще якась спеціальність лікаря</p>
-          </div>
-          <div class="doctor-photo">
-            <figure>
-              <img src="images/doctors-list/doctor.jpg" alt="photo">
-              <figcaption><span class="doctor-status">Доступний</span></figcaption>
-            </figure>
+        <div class="owl-carousel doctor-carousel owl-theme">
+          <div class="item doctor-item">
+            <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor-item_like"></a>
+            <div class="doctor-item_info">
+              <h5>Іванов Олексій Вікторович</h5>
+              <p>Інфекціонист, Лікар-нарколог</p>
+              <p class="doctor-item_info__semiTransparent"> дільничий, Ще якась </p>
+              <p class="doctor-item_info__transparent">спеціальність лікаря</p>
+            </div>
+            <div class="doctor-item_photo">
+              <figure>
+                <img src="images/doctors-list/doctor.jpg" alt="photo">
+                <figcaption><span class="doctor-item_photo__status">Доступний</span></figcaption>
+              </figure>
 
+            </div>
+            <div class="doctor-item_reviews">
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>4,9</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Рейтинг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/start.png" alt="star">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>123</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Відгуків</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/message.png" alt="message">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>14</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Послуг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/calendar.png" alt="calendar">
+                </div>
+              </div>
+            </div>
+            <div class="doctor-item_reviewsLocation">
+              <div class="doctor-item_reviewsLocation__locationInfo">
+                <p><strong>м. Луцьк, пр. Соборності 89 <span class="doctors_small">, каб. 412</span></strong></p>
+                <p class="doctor-item_reviewsLocation__locationInfo-sub">Луцька міська клінічна лікарня</p>
+              </div>
+              <div class="doctor-item_reviewsLocation__icon">
+                <img src="images/doctors-list/location.png" alt="location">
+              </div>
+            </div>
+            <div class="doctor-item_services_wrapper">
+              <div class="doctor-item_services_wrapper__inner">
+                <h6><strong>Послуги та ціни:</strong></h6>
+                <p><span class="doctor-item_services_wrapper__gray">Консультація</span> <span
+                    class="doctor-pl"><strong>- від 100 грн</strong></span></p>
+                <p><span class="doctor-item_services_wrapper__gray">Сеанс терарії</span> <span><strong>- від 300
+                      грн</strong></span></p>
+              </div>
+              <div class="doctor-item_services_wrapper_btns">
+                <button
+                  class="doctor-item_services_wrapper_btns__btn doctor-item_services_wrapper_btns__grow">Написати</button>
+                <button class="doctor-item_services_wrapper_btns__btn"><span
+                    class="doctor-item_services_wrapper_btns__small">Cторінка лікаря</span>
+                  <span class="doctor-item_services_wrapper_btns__large">Детальніше</span>
+                </button>
+              </div>
+            </div>
+          </div>  <div class="item doctor-item">
+            <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor-item_like"></a>
+            <div class="doctor-item_info">
+              <h5>Іванов Олексій Вікторович</h5>
+              <p>Інфекціонист, Лікар-нарколог</p>
+              <p class="doctor-item_info__semiTransparent"> дільничий, Ще якась </p>
+              <p class="doctor-item_info__transparent">спеціальність лікаря</p>
+            </div>
+            <div class="doctor-item_photo">
+              <figure>
+                <img src="images/doctors-list/doctor.jpg" alt="photo">
+                <figcaption><span class="doctor-item_photo__status">Доступний</span></figcaption>
+              </figure>
+
+            </div>
+            <div class="doctor-item_reviews">
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>4,9</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Рейтинг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/start.png" alt="star">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>123</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Відгуків</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/message.png" alt="message">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>14</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Послуг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/calendar.png" alt="calendar">
+                </div>
+              </div>
+            </div>
+            <div class="doctor-item_reviewsLocation">
+              <div class="doctor-item_reviewsLocation__locationInfo">
+                <p><strong>м. Луцьк, пр. Соборності 89 <span class="doctors_small">, каб. 412</span></strong></p>
+                <p class="doctor-item_reviewsLocation__locationInfo-sub">Луцька міська клінічна лікарня</p>
+              </div>
+              <div class="doctor-item_reviewsLocation__icon">
+                <img src="images/doctors-list/location.png" alt="location">
+              </div>
+            </div>
+            <div class="doctor-item_services_wrapper">
+              <div class="doctor-item_services_wrapper__inner">
+                <h6><strong>Послуги та ціни:</strong></h6>
+                <p><span class="doctor-item_services_wrapper__gray">Консультація</span> <span
+                    class="doctor-pl"><strong>- від 100 грн</strong></span></p>
+                <p><span class="doctor-item_services_wrapper__gray">Сеанс терарії</span> <span><strong>- від 300
+                      грн</strong></span></p>
+              </div>
+              <div class="doctor-item_services_wrapper_btns">
+                <button
+                  class="doctor-item_services_wrapper_btns__btn doctor-item_services_wrapper_btns__grow">Написати</button>
+                <button class="doctor-item_services_wrapper_btns__btn"><span
+                    class="doctor-item_services_wrapper_btns__small">Cторінка лікаря</span>
+                  <span class="doctor-item_services_wrapper_btns__large">Детальніше</span>
+                </button>
+              </div>
+            </div>
+          </div>  <div class="item doctor-item">
+            <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor-item_like"></a>
+            <div class="doctor-item_info">
+              <h5>Іванов Олексій Вікторович</h5>
+              <p>Інфекціонист, Лікар-нарколог</p>
+              <p class="doctor-item_info__semiTransparent"> дільничий, Ще якась </p>
+              <p class="doctor-item_info__transparent">спеціальність лікаря</p>
+            </div>
+            <div class="doctor-item_photo">
+              <figure>
+                <img src="images/doctors-list/doctor.jpg" alt="photo">
+                <figcaption><span class="doctor-item_photo__status">Доступний</span></figcaption>
+              </figure>
+
+            </div>
+            <div class="doctor-item_reviews">
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>4,9</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Рейтинг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/start.png" alt="star">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>123</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Відгуків</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/message.png" alt="message">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>14</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Послуг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/calendar.png" alt="calendar">
+                </div>
+              </div>
+            </div>
+            <div class="doctor-item_reviewsLocation">
+              <div class="doctor-item_reviewsLocation__locationInfo">
+                <p><strong>м. Луцьк, пр. Соборності 89 <span class="doctors_small">, каб. 412</span></strong></p>
+                <p class="doctor-item_reviewsLocation__locationInfo-sub">Луцька міська клінічна лікарня</p>
+              </div>
+              <div class="doctor-item_reviewsLocation__icon">
+                <img src="images/doctors-list/location.png" alt="location">
+              </div>
+            </div>
+            <div class="doctor-item_services_wrapper">
+              <div class="doctor-item_services_wrapper__inner">
+                <h6><strong>Послуги та ціни:</strong></h6>
+                <p><span class="doctor-item_services_wrapper__gray">Консультація</span> <span
+                    class="doctor-pl"><strong>- від 100 грн</strong></span></p>
+                <p><span class="doctor-item_services_wrapper__gray">Сеанс терарії</span> <span><strong>- від 300
+                      грн</strong></span></p>
+              </div>
+              <div class="doctor-item_services_wrapper_btns">
+                <button
+                  class="doctor-item_services_wrapper_btns__btn doctor-item_services_wrapper_btns__grow">Написати</button>
+                <button class="doctor-item_services_wrapper_btns__btn"><span
+                    class="doctor-item_services_wrapper_btns__small">Cторінка лікаря</span>
+                  <span class="doctor-item_services_wrapper_btns__large">Детальніше</span>
+                </button>
+              </div>
+            </div>
+          </div>  <div class="item doctor-item">
+            <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor-item_like"></a>
+            <div class="doctor-item_info">
+              <h5>Іванов Олексій Вікторович</h5>
+              <p>Інфекціонист, Лікар-нарколог</p>
+              <p class="doctor-item_info__semiTransparent"> дільничий, Ще якась </p>
+              <p class="doctor-item_info__transparent">спеціальність лікаря</p>
+            </div>
+            <div class="doctor-item_photo">
+              <figure>
+                <img src="images/doctors-list/doctor.jpg" alt="photo">
+                <figcaption><span class="doctor-item_photo__status">Доступний</span></figcaption>
+              </figure>
+
+            </div>
+            <div class="doctor-item_reviews">
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>4,9</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Рейтинг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/start.png" alt="star">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>123</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Відгуків</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/message.png" alt="message">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>14</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Послуг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/calendar.png" alt="calendar">
+                </div>
+              </div>
+            </div>
+            <div class="doctor-item_reviewsLocation">
+              <div class="doctor-item_reviewsLocation__locationInfo">
+                <p><strong>м. Луцьк, пр. Соборності 89 <span class="doctors_small">, каб. 412</span></strong></p>
+                <p class="doctor-item_reviewsLocation__locationInfo-sub">Луцька міська клінічна лікарня</p>
+              </div>
+              <div class="doctor-item_reviewsLocation__icon">
+                <img src="images/doctors-list/location.png" alt="location">
+              </div>
+            </div>
+            <div class="doctor-item_services_wrapper">
+              <div class="doctor-item_services_wrapper__inner">
+                <h6><strong>Послуги та ціни:</strong></h6>
+                <p><span class="doctor-item_services_wrapper__gray">Консультація</span> <span
+                    class="doctor-pl"><strong>- від 100 грн</strong></span></p>
+                <p><span class="doctor-item_services_wrapper__gray">Сеанс терарії</span> <span><strong>- від 300
+                      грн</strong></span></p>
+              </div>
+              <div class="doctor-item_services_wrapper_btns">
+                <button
+                  class="doctor-item_services_wrapper_btns__btn doctor-item_services_wrapper_btns__grow">Написати</button>
+                <button class="doctor-item_services_wrapper_btns__btn"><span
+                    class="doctor-item_services_wrapper_btns__small">Cторінка лікаря</span>
+                  <span class="doctor-item_services_wrapper_btns__large">Детальніше</span>
+                </button>
+              </div>
+            </div>
+          </div>  <div class="item doctor-item">
+            <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor-item_like"></a>
+            <div class="doctor-item_info">
+              <h5>Іванов Олексій Вікторович</h5>
+              <p>Інфекціонист, Лікар-нарколог</p>
+              <p class="doctor-item_info__semiTransparent"> дільничий, Ще якась </p>
+              <p class="doctor-item_info__transparent">спеціальність лікаря</p>
+            </div>
+            <div class="doctor-item_photo">
+              <figure>
+                <img src="images/doctors-list/doctor.jpg" alt="photo">
+                <figcaption><span class="doctor-item_photo__status">Доступний</span></figcaption>
+              </figure>
+
+            </div>
+            <div class="doctor-item_reviews">
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>4,9</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Рейтинг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/start.png" alt="star">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>123</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Відгуків</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/message.png" alt="message">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>14</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Послуг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/calendar.png" alt="calendar">
+                </div>
+              </div>
+            </div>
+            <div class="doctor-item_reviewsLocation">
+              <div class="doctor-item_reviewsLocation__locationInfo">
+                <p><strong>м. Луцьк, пр. Соборності 89 <span class="doctors_small">, каб. 412</span></strong></p>
+                <p class="doctor-item_reviewsLocation__locationInfo-sub">Луцька міська клінічна лікарня</p>
+              </div>
+              <div class="doctor-item_reviewsLocation__icon">
+                <img src="images/doctors-list/location.png" alt="location">
+              </div>
+            </div>
+            <div class="doctor-item_services_wrapper">
+              <div class="doctor-item_services_wrapper__inner">
+                <h6><strong>Послуги та ціни:</strong></h6>
+                <p><span class="doctor-item_services_wrapper__gray">Консультація</span> <span
+                    class="doctor-pl"><strong>- від 100 грн</strong></span></p>
+                <p><span class="doctor-item_services_wrapper__gray">Сеанс терарії</span> <span><strong>- від 300
+                      грн</strong></span></p>
+              </div>
+              <div class="doctor-item_services_wrapper_btns">
+                <button
+                  class="doctor-item_services_wrapper_btns__btn doctor-item_services_wrapper_btns__grow">Написати</button>
+                <button class="doctor-item_services_wrapper_btns__btn"><span
+                    class="doctor-item_services_wrapper_btns__small">Cторінка лікаря</span>
+                  <span class="doctor-item_services_wrapper_btns__large">Детальніше</span>
+                </button>
+              </div>
+            </div>
+          </div>  <div class="item doctor-item">
+            <a href="#"><img src="images/doctors-list/like.png" alt="like" class="doctor-item_like"></a>
+            <div class="doctor-item_info">
+              <h5>Іванов Олексій Вікторович</h5>
+              <p>Інфекціонист, Лікар-нарколог</p>
+              <p class="doctor-item_info__semiTransparent"> дільничий, Ще якась </p>
+              <p class="doctor-item_info__transparent">спеціальність лікаря</p>
+            </div>
+            <div class="doctor-item_photo">
+              <figure>
+                <img src="images/doctors-list/doctor.jpg" alt="photo">
+                <figcaption><span class="doctor-item_photo__status">Доступний</span></figcaption>
+              </figure>
+
+            </div>
+            <div class="doctor-item_reviews">
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>4,9</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Рейтинг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/start.png" alt="star">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>123</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Відгуків</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/message.png" alt="message">
+                </div>
+              </div>
+              <div class="doctor-item_reviews__rait">
+                <div class="doctor-item_reviews__rait___item">
+                  <p><strong>14</strong></p>
+                  <p class="doctor-item_reviews__rait___item-sub">Послуг</p>
+                </div>
+                <div class="doctor-item_reviews__rait___img">
+                  <img src="images/doctors-list/calendar.png" alt="calendar">
+                </div>
+              </div>
+            </div>
+            <div class="doctor-item_reviewsLocation">
+              <div class="doctor-item_reviewsLocation__locationInfo">
+                <p><strong>м. Луцьк, пр. Соборності 89 <span class="doctors_small">, каб. 412</span></strong></p>
+                <p class="doctor-item_reviewsLocation__locationInfo-sub">Луцька міська клінічна лікарня</p>
+              </div>
+              <div class="doctor-item_reviewsLocation__icon">
+                <img src="images/doctors-list/location.png" alt="location">
+              </div>
+            </div>
+            <div class="doctor-item_services_wrapper">
+              <div class="doctor-item_services_wrapper__inner">
+                <h6><strong>Послуги та ціни:</strong></h6>
+                <p><span class="doctor-item_services_wrapper__gray">Консультація</span> <span
+                    class="doctor-pl"><strong>- від 100 грн</strong></span></p>
+                <p><span class="doctor-item_services_wrapper__gray">Сеанс терарії</span> <span><strong>- від 300
+                      грн</strong></span></p>
+              </div>
+              <div class="doctor-item_services_wrapper_btns">
+                <button
+                  class="doctor-item_services_wrapper_btns__btn doctor-item_services_wrapper_btns__grow">Написати</button>
+                <button class="doctor-item_services_wrapper_btns__btn"><span
+                    class="doctor-item_services_wrapper_btns__small">Cторінка лікаря</span>
+                  <span class="doctor-item_services_wrapper_btns__large">Детальніше</span>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="doctor_reviews">
-            <div class="doctor_reviews_bestDesign">
-              <div class="doctor_reviews-niceDesign">
-                <p>4,9</p>
-                <p class="doctor_reviews-sub">Рейтинг</p>
-              </div>
-              <div class="droctor_reviews-img">
-                <img src="images/doctors-list/start.png" alt="star">
-              </div>
-            </div>
-            <div class="doctor_reviews_bestDesign">
-              <div class="doctor_reviews-niceDesign">
-                <p>4,9</p>
-                <p class="doctor_reviews-sub">Рейтинг</p>
-              </div>
-              <div class="droctor_reviews-img">
-                <img src="images/doctors-list/message.png" alt="message">
-              </div>
-            </div>
-            <div class="doctor_reviews_bestDesign">
-              <div class="doctor_reviews-niceDesign">
-                <p>4,9</p>
-                <p class="doctor_reviews-sub">Рейтинг</p>
-              </div>
-              <div class="droctor_reviews-img">
-                <img src="images/doctors-list/calendar.png" alt="calendar">
-              </div>
-            </div>
-          </div>
-          <div class="doctor_reviews-location">
-            <div class="doctor_reviews-location_info">
-                <p>м. Луцьк, пр. Соборності 89, каб. 412</p>
-                <p class="doctor_reviews-sub">Луцька міська клінічна лікарня</p>
-            </div>
-            <div class="doctor_reviews-location_icon">
-              <img src="images/doctors-list/location.png" alt="location">
-            </div>
-          </div>
-          <div class="doctor_reviws-services">
-            <p>Консультація <span>- від 100 грн</span></p>
-            <p>Сеанс терарії <span>- від 300 грн</span></p>
-          </div>
+
         </div>
       </div>
-      <!-- </div> -->
     </div>
   </section>
 
+  <footer class="footer container">
+    <section class="row footer-top">
+      <div class="col-6 col-md-3 col-lg-3 footer-top_references">
+        <h6><strong>Компанія</strong></h6>
+        <ul>
+          <li>
+            <a href="#">
+              <span class="footer_small">Про сервіс</span>
+              <span class="footer_large">Про нас</span>
+            </a>
+          </li>
+          <li><a href="#">Новини</a></li>
+          <li><a href="#">Довідковий центр</a></li>
+          <li><a href="#" class="footer_small">Зворотній зв’язок</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-3 col-lg-3 footer-top_contacts">
+        <h6><strong>Контакти</strong></h6>
+        <p><a href="mailto:moniheal@gmail.com" class="footer-top_contacts__mail">moniheal@gmail.com</a></p>
+        <ul class="footer-top_contacts__social">
+          <li><a href="#"><img src="images/footer/fb.png" alt="facebook"><span class="sr-only">фейсбук</span></a></li>
+          <li><a href="#"><img src="images/footer/insta.png" alt="instagram"><span class="sr-only">інстаграм</span></a></li>
+          <li><a href="#"><img src="images/footer/telegram.png" alt="telegram"><span class="sr-only">телеграм</span></a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 footer-top_subscription">
+        <label for="user_subscription">Підписатися на розсилку</label>
+        <div class="footer-top_subscription__wrap">
+          <input type="email" name="subscription" class="form-control" id="user_subscription" placeholder="Введіть вашу почту">
+          <button class="btn-search"><img src="images/footer/inputArrow.png" alt="search"></button>
+        </div>
+        <span class="sr-only">email</span>
+        </button>
+      </div>
+      <div class="col-8 col-sm-6 col-lg-2 offset-1 footer-top_language">
+        <label for="footer_language" class="footer-top_language__outer">
+          <select name="footer_language" class="form-control" id="footer_language">
+          <option value="ukrainian" selected>Українська</option>
+          <option value="russian">Російська</option>
+          <option value="english">English</option>
+        </select>
+        </label>
+      </div>
+    </section>
+    <div class="row footer-bottom">
+      <div class="col-12 col-md-6 footer-bottom_copyrights">
+        <a href="#">
+          <img src="images/footer/logo_footer.png" class="footer_small" alt="MoniHeal">
+          <img src="images/footer/logo_large.png" class="footer_large" alt="MoniHeal">
+        </a>
+        <p>2019 <strong> MoniHeal</strong>. Medical Online Information System</p>
+      </div>
+      <div class="col-12 col-md-6 footer-bottom_regulations">
+        <ul class="footer-bottom_regulations__list">
+          <li><a href="#">Захист даних</a></li>
+          <li><a href="#">Політика приватності</a></li>
+          <li><a href="#">Правила користування</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
   <!--  =========     Header   =========      -->
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
